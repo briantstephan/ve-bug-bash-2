@@ -6,55 +6,65 @@ import { Footer } from "./components/Footer";
 import { CardComponent as Card, CardProps } from "./components/Card";
 import { StoreInfoCardComponent as StoreInfoCard, StoreInfoCardProps } from "./components/StoreInfoCard";
 import { FAQComponent as FAQ, FAQProps } from "./components/FAQ";
-import {DeliveryPromoComponent as DeliveryPromo, DeliveryPromoProps} from "./components/DeliveryPromo";
+import { DeliveryPromoComponent as DeliveryPromo, DeliveryPromoProps } from "./components/DeliveryPromo";
 import { BannerComponent as Banner, BannerProps } from "./components/Banner";
-import {HoursCardComponent as HoursCard, HoursCardProps} from "./components/HoursCard";
-import {PromoComponent as Promo, PromoProps} from "./components/Promo";
-import {FeaturedItemsComponent as FeaturedItems, FeaturedItemsProps} from "./components/FeaturedItems";
+import { HoursCardComponent as HoursCard, HoursCardProps } from "./components/HoursCard";
+import { PromoComponent as Promo, PromoProps } from "./components/Promo";
+import { FeaturedItemsComponent as FeaturedItems, FeaturedItemsProps } from "./components/FeaturedItems";
 
 import "@yext/visual-editor/style.css"
 
 type LocationProps = {
-  Hero: HeroProps;
-  Columns: ColumnsProps;
-  Card: CardProps;
-  FAQ: FAQProps;
-  DeliveryPromo: DeliveryPromoProps;
-  Banner: BannerProps;
-  HoursCard: HoursCardProps;
-  StoreInfoCard: StoreInfoCardProps;
-  Promo: PromoProps;
-  FeaturedItems: FeaturedItemsProps;
+    Hero: HeroProps;
+    Columns: ColumnsProps;
+    Card: CardProps;
+    FAQ: FAQProps;
+    DeliveryPromo: DeliveryPromoProps;
+    Banner: BannerProps;
+    HoursCard: HoursCardProps;
+    StoreInfoCard: StoreInfoCardProps;
+    Promo: PromoProps;
+    FeaturedItems: FeaturedItemsProps;
 };
 
 // All the available components for locations
 export const locationConfig: Config<LocationProps> = {
-  components: {
-    Hero,
-    Columns,
-    Card,
-    FAQ,
-    DeliveryPromo,
-    Banner,
-    HoursCard,
-    StoreInfoCard,
-    Promo,
-    FeaturedItems,
-  },
-  root: {
-    render: ({ children }) => {
-      return (
-        <>
-          <Header />
-          {children}
-          <Footer />
-        </>
-      );
+    components: {
+        Hero,
+        Columns,
+        Card,
+        FAQ,
+        DeliveryPromo,
+        Banner,
+        HoursCard,
+        StoreInfoCard,
+        Promo,
+        FeaturedItems,
     },
-    fields: {},
-  },
+    root: {
+        render: ({ children }) => {
+            return (
+                <>
+                    <Header />
+                    {children}
+                    <Footer />
+                </>
+            );
+        },
+        fields: {},
+    },
+};
+
+
+type ProductProps = {
+};
+
+export const productConfig: Config<ProductProps> = {
+    components: {},
+    root: {},
 };
 
 export const componentRegistry = new Map<string, Config<any>>([
-  ["location", locationConfig],
+    ["location", locationConfig],
+    ["product", productConfig]
 ]);
